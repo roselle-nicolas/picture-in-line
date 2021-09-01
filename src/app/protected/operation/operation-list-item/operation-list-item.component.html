@@ -1,0 +1,32 @@
+<mat-list-item>
+    <div>
+        <img [src]="compressPicture.url" [alt]="compressPicture.name">
+    </div>
+
+    <p class="title-item">{{compressPicture.name}}</p>
+
+    <!-- <mat-icon
+    *ngIf="!isSelectOn"
+    color="primary"
+    (click)="pictureOptionOn()">
+        more_vert
+    </mat-icon> -->
+    
+    <mat-icon
+    *ngIf="!isPictureCheck && isSelectOn"
+    matTooltip="Selectionner"
+    color="primary"
+    (click)="addPictureSelected(compressPicture)">
+        check_box_outline_blank
+    </mat-icon>
+    
+    <mat-icon
+    *ngIf="isPictureCheck && isSelectOn"
+    matTooltip="Déselectionner"
+    color="primary"
+    (click)="deletePictureSelected(compressPicture)">
+        check_box
+    </mat-icon>
+</mat-list-item>
+
+<mat-divider></mat-divider>

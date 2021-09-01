@@ -1,0 +1,52 @@
+@import '../../../../styles.scss';
+
+.spacer-toolbar {
+    flex: 1 1 auto;
+}
+
+h1  {
+    color: $textColorlight;
+}
+
+.auth-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    p {
+        margin: 0;
+        text-align: center;
+    }
+    .disconected {
+        color: #ff4081;
+        cursor: pointer;
+    }
+}
+
+.menu-icon {
+    @media screen and (min-width : 900px) {
+        display: none;
+    }
+}
+
+.menu-desktop {
+    display: none;
+    @media screen and (min-width : 900px) {
+        display: flex;
+        margin-right: 5rem;
+        p {
+            margin-left: 2rem;
+            margin-bottom: 0;
+            color: #ff4081;
+            cursor: pointer;
+        }
+    }
+}
+
+.display-none {
+    display: none;
+}
+
+
+
+  
+  

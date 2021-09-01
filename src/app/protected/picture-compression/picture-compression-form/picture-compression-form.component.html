@@ -1,0 +1,14 @@
+
+
+<form [formGroup]="compressForm" >
+    <pil-picture-compression-form-select-files></pil-picture-compression-form-select-files>
+    <pil-picture-compression-form-ratio [ratio]="ratio"></pil-picture-compression-form-ratio>
+</form>
+<button
+*ngIf="isPictureFiles"
+class="submit-btn"
+mat-raised-button
+color="primary"
+(click)="submit()">
+    Envoyer
+</button>

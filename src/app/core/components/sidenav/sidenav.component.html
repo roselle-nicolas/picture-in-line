@@ -1,0 +1,28 @@
+<h2>Tableau de bord</h2>
+
+<ul *ngIf="user">
+    <li
+    *ngFor="let menu of menus$|async"
+    role="listitem"
+    (click)="navigate(menu.path)">
+        <pil-card-menu
+        *ngIf="menu.type === 'card-menu'"
+        [cardMenuTitle]="menu.title"
+        [buttonTextContent]="menu.buttonContent!"
+        [cardPicture]="menu.picture!"
+        [infoCardText]="menu.infoCardText!">
+        </pil-card-menu>
+    </li>
+</ul>
+
+<mat-nav-list *ngIf="!user">
+    <a
+    mat-list-item
+    *ngFor="let menu of menus$|async"
+    role="listitem"
+    (click)="navigate(menu.path)"> 
+        <mat-icon *ngIf="menu.icon">{{ menu.icon }}</mat-icon>
+        {{ menu.title }}
+    </a>
+ </mat-nav-list>
+

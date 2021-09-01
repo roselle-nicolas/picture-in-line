@@ -1,0 +1,17 @@
+.title-item {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+mat-list-item {
+    div {
+        margin-right: .5rem;
+        img {
+            width: 3rem;
+            height: 2.5rem;
+        }
+    }
+}
+

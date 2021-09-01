@@ -1,0 +1,22 @@
+pil-picture-compression-form-select-files {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+pil-picture-compression-form-ratio {
+    position: absolute;
+    bottom: 5rem;
+    left: 1rem;
+    right: 1rem;
+}
+
+.submit-btn {
+    position: fixed;
+    font-size: 1.3rem;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+

@@ -1,0 +1,30 @@
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  list-style:none;
+  margin-left:0;
+  padding-left:0;
+  li {
+    cursor: pointer;
+  }
+  div {
+    width: 50%;
+    margin-left: 10%;
+    .nav-caption {
+      margin-left: 1rem;
+    }
+  }
+}
+
+pil-card-menu {
+  display: block;
+  width: 95%;
+  margin: auto;
+  margin-bottom: .5rem;
+  &:hover {
+    background-color: #E6E7F3;
+  }
+}

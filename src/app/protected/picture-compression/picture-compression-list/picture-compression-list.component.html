@@ -1,0 +1,6 @@
+<mat-list role="list">
+    <pil-picture-compression-list-item
+    *ngFor="let item of pictureFiles$ | async"
+    [filename]="item.name">
+    </pil-picture-compression-list-item>
+</mat-list>

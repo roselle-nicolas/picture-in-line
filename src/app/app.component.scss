@@ -1,0 +1,15 @@
+mat-sidenav-content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+}
+mat-sidenav {
+  position: fixed;
+  max-height: 100vh;
+  width: 100vw;
+}
+

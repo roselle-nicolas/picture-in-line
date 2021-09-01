@@ -1,0 +1,8 @@
+<p *ngIf="email && email.errors && email.dirty">
+    <mat-error *ngIf="email.errors.required">
+       Email requis.
+    </mat-error>
+    <mat-error *ngIf="email.errors.email">
+       email@exemple.com
+    </mat-error>
+</p>

@@ -1,0 +1,24 @@
+.activity {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    min-height: 100%;
+    margin: auto;
+    @media screen and (min-width : 600px) {
+        align-items: center;
+    }
+    @media screen and (min-width : 1024px) {
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+pil-home-activity-card {
+    margin-bottom: 0.5rem;
+    @media screen and (min-width : 600px) {
+        margin: 0.5rem 0.5rem;
+    }
+    
+}

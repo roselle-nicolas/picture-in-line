@@ -1,0 +1,40 @@
+
+ <mat-toolbar color="primary" class="toolbar">
+    <button
+      mat-icon-button
+      color="accent"
+      class="menu-icon"
+      aria-label="icon-button avec une icone de menu"
+      (click)="onSidenavToggle()">
+      <mat-icon matTooltip="Menu">menu</mat-icon>
+    </button>
+    <span (click)="navigate('home')">PicInLine</span>
+    <div class="menu-desktop">
+      <p
+      *ngFor="let menuItem of menuPublic"
+      (click)="navigate(menuItem.path)"
+      [ngClass]="{'display-none': menuItem.title === 'Inscription'&& user}">
+        {{menuItem.title}}
+      </p>
+    </div>
+    <span class="spacer-toolbar"></span>
+    <div class="auth-info">
+      <p *ngIf="user">
+        {{ user.pseudo }}
+      </p>
+      <button
+      *ngIf="!user"
+      mat-stroked-button
+      color="accent"
+      (click)="navigate('login')">
+        Connection
+      </button>
+      <p
+      *ngIf="user"
+      class="mat-small disconected"
+      color="accent"
+      (click)="logout()">
+      déconnexion
+      </p>
+    </div>
+</mat-toolbar>

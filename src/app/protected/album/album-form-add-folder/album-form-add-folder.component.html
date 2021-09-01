@@ -1,0 +1,24 @@
+<form
+novalidate
+[formGroup]="formAddFolder"
+(ngSubmit)="submit()">
+    <h2 *ngIf="!renameForlder && !renamePicture">Ajouter un nouveau dossier</h2>
+    <h2 *ngIf="renamePicture">Rennomer une image</h2>
+    <h2 *ngIf="renameForlder">Rennomer un dossier</h2>
+    <mat-form-field appearance="standard">
+        <input
+        enabled="false"
+        matInput
+        type="text"
+        formControlName="name"
+        autocorrect="off"
+        autocomplete="off"
+        placeholder="Nom"
+        required>
+    </mat-form-field>
+    <div class="button">
+        <button *ngIf="!renameForlder && !renamePicture" mat-raised-button color="primary" type="submit">Ajouter</button>
+        <button *ngIf="renameForlder || renamePicture" mat-raised-button color="primary" type="submit">Renommer</button>
+        <button mat-raised-button color="primary" (click)="cancel()">Annuler</button>
+    </div>
+</form>

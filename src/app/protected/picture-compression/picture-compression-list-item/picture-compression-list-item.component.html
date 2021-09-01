@@ -1,0 +1,14 @@
+<mat-list-item role="listitem">
+    <p>{{filename}}</p>
+    <mat-spinner
+    [diameter]="18"
+    *ngIf="pictureDownloadingName === filename">
+    </mat-spinner>
+    <mat-icon
+    *ngIf="!pictureDownloadingName"
+    color="primary"
+    (click)="deletePictureFile(filename)">
+        delete
+    </mat-icon>
+</mat-list-item>
+<mat-divider></mat-divider>

@@ -1,0 +1,42 @@
+.folder-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 22vw;
+    height: 6.2rem;
+    cursor: pointer;
+    @media screen and (min-width : 600px) {
+        width: 20vw;
+    }
+    @media screen and (min-width : 900px) {
+        width: 15vw;
+        height: 5.2rem;
+    }
+    @media screen and (min-width : 1024px) {
+        width: 8vw;
+        
+    }
+    mat-icon.folder {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 3rem;
+        transform: translate(-100%, -100%);
+
+    }
+    mat-icon.select {
+        position: absolute;
+        top: 1rem;
+        right: .5rem;
+    }
+    p {
+        margin: 0;
+        position: absolute;
+        top: 4.3rem;
+        width: 95%;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

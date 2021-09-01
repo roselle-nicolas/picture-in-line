@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ cardMenuTitle }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <div>
+        <img [src]="cardPicture" >
+    </div>    
+    <ul>
+        <li *ngFor="let element of infoCardText">
+            {{ element }}
+        </li>
+       
+    </ul>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,13 @@
+<mat-slider
+matTooltip="Taux de compression"
+color="primary"
+class="example-margin"
+max="100"
+min="0"
+step="10"
+thumbLabel="true"
+tickInterval="10"
+[value]="ratioValue"
+(change)="onChange($event)">
+</mat-slider>
+{{ ratioValue }}%

@@ -1,0 +1,114 @@
+<h1>Opération en cours</h1>
+<section class="operation">
+    <!-- images compréssées-->
+    <section class="compress-picture" [ngClass]="{'max-w-90' : rankingPictureHidden$ | async}">
+        <h2>Image compressé</h2>
+
+        <!-- icône -->
+        <div class="download-picture">
+            <mat-icon
+            matTooltip="Annuler la compression"
+            color="accent"
+            (click)="cancelOperationCompress()">
+                delete_forever
+            </mat-icon>
+
+            <mat-icon
+            matTooltip="Download toutes les images"
+             color="accent"
+            (click)="saveCompressPicture()">
+                cloud_download
+            </mat-icon>
+        </div>
+
+        <!-- Liste des images compressées -->
+        <mat-list
+        role="list"
+        class="list"
+        cdkDropList
+        #compressPictureList="cdkDropList"
+        [cdkDropListData]="compressPictures"
+        [cdkDropListConnectedTo]="[rankingList]"
+        (cdkDropListDropped)="drop($event)">
+            <pil-operation-list-item
+            *ngFor="let compressPicture of compressPictures"
+            role="listitem"
+            class="item"
+            cdkDrag
+            [compressPicture]="compressPicture"
+            [isSelectOn]="true">
+                <img
+                class="picture-preview"
+                *cdkDragPreview
+                [src]="compressPicture.url"
+                [alt]="compressPicture.name">
+            </pil-operation-list-item>
+        </mat-list>
+    </section>
+
+    <!-- Dossier album -->
+    <section class="ranking-picture" [ngClass]="{'diplay-none' : rankingPictureHidden$ | async}">
+        <h2>Répertoire</h2>
+
+        <!-- icône -->
+        <div class="ranking-picture-open">
+            <mat-icon
+            [ngClass]="{'diplay-none' : rankingPictureHidden$ | async}"
+            color="accent"
+            (click)="rankingPictureHidden(true)"
+            matTooltip="Cacher les répertoires">
+                    disabled_visible
+            </mat-icon>
+        </div>
+
+        <!-- navigation dossiers -->
+        <pil-operation-folder-navigation (toggleFormAddFolder)="toggleFormAddFolder()"></pil-operation-folder-navigation>
+
+         <!-- ajout de dossier -->
+        <pil-operation-form-add-folder *ngIf="showFormAddFolder$ | async"></pil-operation-form-add-folder>
+
+        <!-- liste des dossiers de l'album-->
+        <mat-list
+        role="list"
+        class="list"
+        cdkDropList
+        #rankingList="cdkDropList"
+        [cdkDropListData]="rankingPictures"
+        [cdkDropListConnectedTo]="[compressPictureList]"
+        (cdkDropListDropped)="drop($event)">
+            <!-- liste des dossiers et sous dossiers -->
+            <pil-operation-list-folder
+            *ngFor="let folderPicture of subfoldersPicture"
+            role="listitem"
+            [folderPicture]="folderPicture">
+            </pil-operation-list-folder>
+            <!-- liste des images d'un dossier-->
+            <pil-operation-list-item
+            *ngFor="let compressPicture of rankingPictures"
+            role="listitem"
+            cdkDrag class="item"
+            [compressPicture]="compressPicture">
+            <img
+                class="picture-preview"
+                *cdkDragPreview
+                [src]="compressPicture.url"
+                [alt]="compressPicture.name">
+            </pil-operation-list-item>
+        </mat-list>
+    </section>
+
+    <section
+    *ngIf="rankingPictureHidden$ | async"
+    class="ranking-picture-hidden"
+    (click)="rankingPictureHidden(false)">
+        <mat-icon
+        class="icon-ranking-picture-open"
+        color="accent"
+        matTooltip="Afficher les répertoires">
+            drive_file_move
+        </mat-icon>
+    </section>
+
+</section>
+
+

@@ -1,0 +1,14 @@
+<p *ngIf="pseudo && pseudo.errors && pseudo.dirty">
+    <mat-error *ngIf="pseudo.errors.required">
+       Pseudo requis.
+    </mat-error>
+    <mat-error *ngIf="pseudo.errors.minlength">
+      3 caractères minimum.
+    </mat-error>
+    <mat-error *ngIf="pseudo.errors.maxlength">
+      20 caractères maximum.
+    </mat-error>
+    <mat-error *ngIf="pseudo.errors.pattern">
+      caractères speciaux autorisés: d@àéèç'ê-
+    </mat-error>
+</p>

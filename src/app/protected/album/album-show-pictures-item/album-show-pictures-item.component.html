@@ -1,0 +1,19 @@
+<div
+class="picture-item"
+(click)="selectPicture(picture)"
+[ngClass]="{'opacity50': isModeSelection && !isPictureSelected}">
+    <img [src]="picture?.url" [alt]="picture?.name">
+
+    <mat-icon
+    *ngIf="isModeSelection && !isPictureSelected"
+    color="primary">
+        check_box_outline_blank
+    </mat-icon>
+
+    <mat-icon
+    *ngIf="isModeSelection && isPictureSelected"
+    color="accent">
+        check_box
+    </mat-icon>
+</div>
+

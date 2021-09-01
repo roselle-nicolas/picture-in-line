@@ -1,0 +1,24 @@
+.full-screen-picture {
+    position:fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        max-width: 100vw;
+        max-height: 100vh;
+        object-fit: cover;
+        
+    }
+    mat-icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}

@@ -1,0 +1,17 @@
+<input
+type="file"
+multiple="true"
+(change)="detectFiles($event)"
+#fileInput
+style="display:none"
+accept=".jpeg, .jpg, .svg, .png, .gif"
+>
+<button
+  matTooltip="Ajouter des images"
+  class="add-files-btn"
+  mat-fab
+  color="accent"
+  aria-label="Ajouter des images"
+  (click)="fileInput.click()">
+    <mat-icon>add</mat-icon>
+</button>

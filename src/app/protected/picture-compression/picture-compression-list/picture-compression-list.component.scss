@@ -1,0 +1,23 @@
+mat-list {
+    margin-top: 3.5vh;
+    height: 50vh;
+    overflow: auto;
+    @media screen and (orientation: portrait) and (min-width : 360px) {
+        height: 60vh;
+    }
+    @media screen and (orientation: portrait) and (min-width : 600px) {
+        height: 65vh;
+        // margin-top: 3rem;
+    }
+    @media screen and (orientation: portrait) and (min-width : 1024px) {
+        height: 65vh;
+        margin-top: 9vh;
+    }
+
+    @media screen and (orientation: landscape) {
+        margin-top: 5vh;
+    }
+    @media screen and (orientation: landscape) and (min-width : 1280px){
+        margin-top: 12vh;
+    }
+}

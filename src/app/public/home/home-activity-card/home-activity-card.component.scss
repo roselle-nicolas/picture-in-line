@@ -1,0 +1,17 @@
+mat-card {
+    width: 15rem;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    img {
+        width: 150px;
+        
+    }
+}
+mat-card-content {
+    p {
+        text-align: center;
+    }
+}

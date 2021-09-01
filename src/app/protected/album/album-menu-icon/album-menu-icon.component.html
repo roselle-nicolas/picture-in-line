@@ -1,0 +1,7 @@
+<nav class="menu-icon">
+    <pil-album-menu-icon-item
+    *ngFor="let itemAlbulMenu of albumMenu$ | async"
+    [itemAlbulMenu]="itemAlbulMenu"
+    (action)="newAction($event)">
+    </pil-album-menu-icon-item>
+</nav>

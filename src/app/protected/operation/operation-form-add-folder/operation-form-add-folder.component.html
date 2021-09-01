@@ -1,0 +1,18 @@
+<form
+novalidate
+[formGroup]="folderForm"
+(ngSubmit)="submit()">
+    <mat-form-field appearance="standard">
+
+        <input
+        enabled="false"
+        matInput
+        type="text"
+        formControlName="name"
+        autocorrect="off"
+        autocomplete="off"
+        placeholder="Nouveau dossier"
+        required>
+        <mat-icon color="accent" matPrefix (click)="submit()" >create_new_folder</mat-icon>
+    </mat-form-field>
+</form>

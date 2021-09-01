@@ -1,0 +1,24 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (min-width : 900px) {
+        height: 25vh;
+        margin-top: 5vh;
+    }
+}
+
+mat-form-field.mat-form-field {
+    @media screen and (min-width : 600px) {
+        width: 70%;
+        max-width: 20rem;
+        font-size: 1rem;
+    }
+}
+
+button {
+    @media screen and (min-width : 600px) {
+        font-size: 1rem;
+    }
+}

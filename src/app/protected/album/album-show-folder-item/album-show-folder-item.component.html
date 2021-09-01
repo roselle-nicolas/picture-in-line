@@ -1,0 +1,17 @@
+<div class="folder-item" (click)="selectFolder(folder)">
+    <mat-icon class="folder" color="primary">folder</mat-icon>
+    <p>{{folder?.name}}</p>
+    <mat-icon
+    class="select"
+    *ngIf="isModeSelection && !isFolderSelected"
+    color="primary">
+        check_box_outline_blank
+    </mat-icon>
+
+    <mat-icon
+    class="select"
+    *ngIf="isModeSelection && isFolderSelected"
+    color="accent">
+        check_box
+    </mat-icon>
+</div>

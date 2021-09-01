@@ -1,0 +1,7 @@
+<section
+class="full-screen-picture"
+*ngIf="picture"
+(click)="closePictureFullScreen()">
+    <img [src]="picture.url" [alt]="picture.name">
+    <mat-icon>close</mat-icon>
+</section>

@@ -1,0 +1,6 @@
+<section class="album">
+    <pil-album-show-pictures-item
+    *ngFor="let picture of pictures$ | async"
+    [picture]="picture">
+    </pil-album-show-pictures-item>
+</section>

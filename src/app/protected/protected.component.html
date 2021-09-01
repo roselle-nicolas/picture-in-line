@@ -1,0 +1,23 @@
+<section class="protected">
+    <nav class="dashboard">
+        <h2>Tableau de bord</h2>
+        <ul>
+            <li *ngFor="let menu of menus$|async" role="listitem" (click)="navigate(menu.path)">
+                <div *ngIf="menu.type ==='text'">
+                    <mat-icon *ngIf="menu.icon">{{ menu.icon }}</mat-icon>
+                    <span class="nav-caption">{{ menu.title }}</span>
+                </div>
+                <pil-card-menu
+                *ngIf="menu.type === 'card-menu'"
+                [cardMenuTitle]="menu.title"
+                [buttonTextContent]="menu.buttonContent!"
+                [cardPicture]="menu.picture!"
+                [infoCardText]="menu.infoCardText!">
+                </pil-card-menu>
+            </li>
+        </ul>
+    </nav>
+    <section class="dashboard-page">
+        <router-outlet></router-outlet>
+    </section>
+</section>

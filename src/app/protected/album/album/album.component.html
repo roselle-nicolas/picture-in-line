@@ -1,0 +1,15 @@
+<div class="container">
+    <pil-album-menu-icon></pil-album-menu-icon>
+    <section class="section-album">
+        <h2>{{currentFolder?.name}}</h2>
+        <pil-album-show-folder></pil-album-show-folder>
+        <pil-album-show-pictures></pil-album-show-pictures>
+    </section>
+</div>
+<pil-album-form-add-folder
+*ngIf="(isOnModeAddFolder$ | async) || renameFolder || renamePicture"
+[currentFolder]="currentFolder"
+[renameForlder]="renameFolder"
+[renamePicture]="renamePicture">
+</pil-album-form-add-folder>
+
